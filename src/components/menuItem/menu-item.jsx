@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import "./menuitem.styles.scss";
+import {withRouter} from "react-router-dom";
 
+class MenuItem extends Component {
+    clickHandle = () => {
+        this.props.history.push(this.props.match.url + this.props.linkUrl);
+        // or
+        // this.props.history.push(`${this.props.match.url}${this.props.linkUrl}`)
+    }
 
-export default function MenuItem({title, imageUrl, size}) {
-    return (
-        <div className={`${size} menu-item`}>
+    render() {
+        const {title, imageUrl, size, linkUrl} = this.props
+        return (
+            <div 
+                className={`${size} menu-item`}
+                onClick={this.clickHandle} >
+            
             <div className="background-image" 
                 style={{
                     backgroundImage: `url(${imageUrl})`
-                    }} />
+                }} />
                  
             
                     <div className="content">
@@ -16,5 +27,8 @@ export default function MenuItem({title, imageUrl, size}) {
                         <span className="subtitle">SUBTITLE</span>
                     </div>
         </div>
-    )
+        )
+    }
 }
+
+export default withRouter(MenuItem);

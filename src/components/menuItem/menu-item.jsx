@@ -10,7 +10,7 @@ class MenuItem extends Component {
     }
 
     render() {
-        const {title, imageUrl, size, linkUrl} = this.props
+        const {title, imageUrl, size} = this.props
         return (
             <div 
                 className={`${size} menu-item`}

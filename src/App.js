@@ -2,11 +2,9 @@ import React, { Component } from 'react'
 import HomePage from "./pages/homepage/Homepage"
 import "./App"
 import {Route, Switch} from "react-router-dom";
+import ShopPage from "./pages/shoppage/shop";
 
 
-const HatsPage = () => {
-  return (<h1>HatsPage</h1>)
-}
 
 
 export default class App extends Component {
@@ -15,7 +13,7 @@ export default class App extends Component {
         <div className="App">
           <Switch>
             <Route exact path="/" component={HomePage} />
-            <Route path="/hats" component={HatsPage} />
+            <Route path="/shop" component={ShopPage} />
           </Switch>
         </div>
     )

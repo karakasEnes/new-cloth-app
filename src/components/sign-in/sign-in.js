@@ -13,6 +13,8 @@ export default class SignIn extends Component {
         }
     }
 
+
+
     handleSubmit = event => {
         event.preventDefault();
         
@@ -46,7 +48,6 @@ export default class SignIn extends Component {
                         name="email" 
                         type="email" 
                         handleChange={this.handleChange}
-            
                         required/>
 
                     <CustomInput 

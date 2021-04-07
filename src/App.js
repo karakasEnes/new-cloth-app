@@ -4,7 +4,7 @@ import "./App.css";
 import {Route, Switch} from "react-router-dom";
 import ShopPage from "./pages/shoppage/shop";
 import Header from "./components/header/header";
-
+import SignInAndOutPage from "./pages/signInAndSignOutPage/sign-in-out-page"
 
 
 export default class App extends Component {
@@ -15,6 +15,7 @@ export default class App extends Component {
             <Switch>
               <Route exact path="/" component={HomePage} />
               <Route path="/shop" component={ShopPage} />
+              <Route path="/signin" component={SignInAndOutPage} />
             </Switch>
         </div>
     )

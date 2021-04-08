@@ -1,7 +1,7 @@
 import React from "react";
 import "./custom-input.styles.scss"
 const CustomInput = ({handleChange, label, ...otherCustomProps}) => {
-    // const {handleChange, label, ...otherCustomProps} = this.props;
+    
 
     return(
         <div className="group">

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CustomInput from "../form-input/form-input";
 import CustomButton from "../custom-button/custom-button"
-import {signInWithGoogle} from "../../firebase/firebase.utils"
+import {auth, signInWithGoogle} from "../../firebase/firebase.utils"
 
 import "./sign-in.styles.scss"
 
@@ -17,9 +17,22 @@ export default class SignIn extends Component {
 
 
 
-    handleSubmit = event => {
+    handleSubmit = async event => {
         event.preventDefault();
-        event.target.reset();
+        const {email, password} = this.state;
+        
+
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+            event.target.reset();
+
+        } catch (error){
+            alert(error)
+        }
+
+
+
+        
         
     }
 

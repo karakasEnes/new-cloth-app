@@ -27,12 +27,12 @@ const config = {
 
       try {
         
-        await userRef.set( {
+        await userRef.set({
           displayName,
           email,
           createdAt,
           ...additionalData
-        })
+        });
       } catch (error) {
         console.log("error creating user", error.message);
       }

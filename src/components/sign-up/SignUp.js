@@ -31,12 +31,7 @@ export default class SignUp extends Component {
 
             await createUserProfileDocument(user, {displayName});
 
-            this.setState({
-                displayName: null,
-                email: null,
-                password:null,
-                confirmPassword: null
-            });
+            e.target.reset();
             
             } catch (error) {
                 alert(error);
@@ -47,7 +42,7 @@ export default class SignUp extends Component {
     handleChange = (e) => {
         this.setState({
             [e.target.name] : e.target.value
-        })
+        });
     }
 
 

@@ -5,9 +5,9 @@ import "./header.styles.scss"
 import {auth} from "../../firebase/firebase.utils"
 import {connect} from "react-redux";
 import CardIcon from "../card-icon/card-icon";
+import CardDropdown from "../card-dropdown/card-dropdown";
 
-
-const Header = ({getCurrentUser}) => {
+const Header = ({currentUser, hidden}) => {
 
     return (
         <div className="header">
@@ -20,7 +20,7 @@ const Header = ({getCurrentUser}) => {
                     <Link className="option" to="contact">CONTACT</Link>
                     
                     {
-                        getCurrentUser ? 
+                        currentUser ? 
                         <div className="option"
                             onClick={() => auth.signOut() }>SIGN OUT</div>
                         :
@@ -32,13 +32,20 @@ const Header = ({getCurrentUser}) => {
                     <CardIcon />
 
                 </div>
+
+
+                {
+                    hidden ? null : <CardDropdown />
+                }
+                
                 
         </div>
     )
 }
 
-const mapStateToProps = state => ({
-    getCurrentUser: state.user.currentUser 
+const mapStateToProps = ({user: {currentUser}, card: {hidden}}) => ({
+    currentUser,
+    hidden
 })
 
 export default connect(mapStateToProps)(Header);

@@ -11,10 +11,10 @@ const userReducer = (state=initState, action) => {
             return {
                 ...state,
                 currentUser: action.payload
-            }
+            };
         default:
             return state;
     }
 }
 
-export default userReducer
+export default userReducer;

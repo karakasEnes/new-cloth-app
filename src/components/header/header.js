@@ -4,6 +4,7 @@ import {ReactComponent as Logo} from "../../assets/crown.svg"
 import "./header.styles.scss"
 import {auth} from "../../firebase/firebase.utils"
 import {connect} from "react-redux";
+import CardIcon from "../card-icon/card-icon";
 
 
 const Header = ({getCurrentUser}) => {
@@ -27,6 +28,8 @@ const Header = ({getCurrentUser}) => {
                             className="option" 
                             to="signin">SIGN IN</Link>
                     }
+
+                    <CardIcon />
 
                 </div>
                 

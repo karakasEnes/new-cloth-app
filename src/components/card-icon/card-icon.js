@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {ReactComponent as ShoppingIcon} from "../../assets/shopping-bag.svg";
 import "./card-icon.styles.scss";
 import {connect} from "react-redux";
-import toggleCard from "../../reducers/card-reducer/cardActions";
+import {toggleCard} from "../../reducers/card-reducer/cardActions";
 
 
 class CardIcon extends Component {

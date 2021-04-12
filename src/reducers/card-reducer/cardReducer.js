@@ -1,4 +1,6 @@
 import cardTypes from "./cardTypes";
+import {addCardUtils} from "./card.utils";
+
 
 const initState = {
     hidden: true,
@@ -14,12 +16,15 @@ const cardReducer = (state=initState, action) => {
                 ...state,
                 hidden: !state.hidden
             };
+        
+        
         case cardTypes.ADD_ITEM:
             return {
                 ...state,
-                card_items: [...state.card_items, action.payload]
+                card_items: addCardUtils(state.card_items, action.payload)
             }
-
+            // old code
+                // card_items: [...state.card_items, action.payload]
         default:
             return state;
     }

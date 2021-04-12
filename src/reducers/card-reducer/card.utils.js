@@ -1,5 +1,5 @@
 export const addCardUtils = (cardItems, cardToAdd) => {
-    const existCard = cardItems.map(card => 
+    const existCard = cardItems.find(card => 
         card.id === cardToAdd.id)
 
     if (existCard) {

@@ -11,7 +11,6 @@ export default class CardItem extends Component {
                     <span className="price">{quantity} x {price}</span>
 
                 </div>
-                
             </div>
         )
     }

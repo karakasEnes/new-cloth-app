@@ -10,7 +10,6 @@ const CustomButton = ({children, isGoogleSignIn, inverted, ...otherCustomProps})
         ${isGoogleSignIn ? "google-sign-in" : ""}  custom-button`} 
         
         {...otherCustomProps}> 
-            
             {children}
         </button>
     )

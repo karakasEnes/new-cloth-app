@@ -7,6 +7,9 @@ import {connect} from "react-redux";
 import CardIcon from "../card-icon/card-icon";
 import CardDropdown from "../card-dropdown/card-dropdown";
 
+import {createStructuredSelector} from "reselect";
+import {selectCardHidden} from "../../reducers/card-reducer/card.selector"
+import {selectCurrentUser} from "../../reducers/user-reducer/user.Selector"
 const Header = ({currentUser, hidden}) => {
 
     return (
@@ -43,9 +46,9 @@ const Header = ({currentUser, hidden}) => {
     )
 }
 
-const mapStateToProps = ({user: {currentUser}, card: {hidden}}) => ({
-    currentUser,
-    hidden
+const mapStateToProps = createStructuredSelector({
+    currentUser: selectCurrentUser,
+    hidden: selectCardHidden
 })
 
 export default connect(mapStateToProps)(Header);

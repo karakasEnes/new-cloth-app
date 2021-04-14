@@ -4,7 +4,7 @@ import "./card-icon.styles.scss";
 import {connect} from "react-redux";
 import {toggleCard} from "../../reducers/card-reducer/cardActions";
 import {selectCardItemsCount} from "../../reducers/card-reducer/card.selector"
-
+import {createStructuredSelector} from "reselect";
 
 class CardIcon extends Component {
     render() {
@@ -26,8 +26,8 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-const mapStateToProps = (state) => ({
-    itemCount : selectCardItemsCount(state)
+const mapStateToProps = createStructuredSelector({
+    itemCount : selectCardItemsCount
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardIcon)
